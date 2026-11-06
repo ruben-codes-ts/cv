@@ -1,4 +1,4 @@
-// Renders the generated site to A4 PDFs with Playwright.
+// Renders the generated site to A4 PDFs, plus a preview image for the README, with Playwright.
 // Usage: npm run generate && npm run pdf
 import { createServer } from 'node:http'
 import { readFile } from 'node:fs/promises'
@@ -30,9 +30,17 @@ for (const [lang, route] of [['en', '/'], ['nl', '/nl']]) {
   await page.evaluate(() => document.fonts.ready)
   const out = `public/ruben-versantvoort-cv-${lang}.pdf`
   await page.pdf({ path: out, format: 'A4', preferCSSPageSize: true, printBackground: true })
-  await page.pdf({ path: out.replace("public/", `${root}/`), format: "A4", preferCSSPageSize: true, printBackground: true })
-  console.log("wrote", out)
+  await page.pdf({ path: out.replace('public/', `${root}/`), format: 'A4', preferCSSPageSize: true, printBackground: true })
+  console.log('wrote', out)
 }
+
+// README preview: the top of the English page as a site visitor sees it, without the toolbar.
+const preview = await browser.newPage({ viewport: { width: 880, height: 1056 }, deviceScaleFactor: 2 })
+await preview.goto(base + '/', { waitUntil: 'networkidle' })
+await preview.evaluate(() => document.fonts.ready)
+await preview.addStyleTag({ content: '.toolbar { display: none !important }' })
+await preview.screenshot({ path: 'docs/preview.png' })
+console.log('wrote docs/preview.png')
 
 await browser.close()
 server.close()
