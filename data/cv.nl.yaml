@@ -1,0 +1,88 @@
+# Nederlandse versie. Houd de inhoud gelijk aan cv.en.yaml.
+
+name: Ruben Versantvoort
+headline: Test Automation Engineer · Voormalig Frontend Architect
+location: Weert (werkzaam in Eindhoven)
+links:
+  linkedin: https://www.linkedin.com/in/ruben-versantvoort-ba12151a3
+  github: https://github.com/ruben-codes-ts
+  site: TODO zodra live
+
+summary: >
+  Software engineer die de overstap maakte van systemen bouwen naar bewijzen
+  dat ze werken. Na vijf jaar als webdeveloper en frontend architect bij
+  GoodHabitz ben ik nu eigenaar van het end-to-end testplatform van het
+  bedrijf: een Playwright-suite die deploys bewaakt voor onze productteams,
+  met wijzigingsgerichte CI, planning op basis van ernst en rapportage in
+  Grafana. Ik bouw AI-agents die verouderde tests herstellen en nachtelijke
+  fouten triëren, met vangrails die bij elke merge een mens laten beslissen.
+
+experience:
+  - company: GoodHabitz
+    location: Eindhoven
+    period: feb 2020 – heden
+    roles:
+      - title: Test Automation Engineer
+        period: apr 2025 – heden
+        highlights:
+          - Eigenaar van het bedrijfsbrede Playwright E2E-platform (TypeScript, Page Object Model) voor alle belangrijke productgebieden; vrijwel alle code is van mijn hand.
+          - E2E ingericht als deploy-gate voor onze productrepositories op staging en productie, met herkomst van elke run zichtbaar in Grafana.
+          - Wijzigingsgerichte merge request-pipelines gebouwd die alleen de tests draaien die een wijziging raakt, met een vaste basis van blokkerende tests bij brede wijzigingen.
+          - Ernstmodel ontworpen (blocking / degraded / cosmetic) dat dagelijkse smoke-runs en wekelijkse regressieruns per omgeving aanstuurt.
+          - Rapportage gebouwd in Grafana en Loki (gegenereerde dashboards voor gezondheid, trends en flakiness) plus Slack-meldingen bij fouten; hergebruikt voor een tweede testsuite.
+          - "AI-tooling voor testonderhoud gebouwd met Claude Code en de Playwright MCP: een agent die falende tests diagnosticeert en herstelt, en een nachtelijke triage die kleine, reviewbare fix-MR's opent."
+          - Mede-ontwikkeld aan agent-workflows die tests genereren uit AIO-testcases, en met live API-tests aangetoond hoe resultaten terugkoppelen naar het testmanagementsysteem.
+          - De Experts E2E-suite opgezet (repository als code in OpenTofu, CI, rapportage, eerste geauthenticeerde tests).
+          - De testhandleiding van de organisatie geschreven voor niet-QA engineers (testlagen, triggers, planning, ernst).
+          - SonarCloud- en Trivy-securityscans toegevoegd aan CI en kritieke CVE's in dependencies opgelost.
+      - title: Frontend Architect
+        period: jan 2023 – apr 2025
+        highlights:
+          - Het end-to-end testplatform opgericht (2024) om testen die verspreid waren over veel repositories te centraliseren en de organisatie één plek te geven om releasekwaliteit te bewaken.
+          - Meertalige SCORM-export voor cursussen en assessments ontworpen en gebouwd; wordt nog steeds als betaalde add-on aan klanten verkocht.
+          - De frontendarchitectuur vormgegeven, inclusief de backend-for-frontend-lagen die haar bedienen (TypeScript, Node.js).
+      - title: Webdeveloper
+        period: feb 2020 – jan 2023
+        highlights:
+          - Features gebouwd voor my.goodhabitz.com, het leerplatform dat klanten dagelijks gebruiken en dat nog steeds in productie is (JavaScript, React, Node.js).
+
+  - company: Dcentralized
+    location: Eindhoven
+    period: 2019 – 2020
+    roles:
+      - title: React Developer (stage, Avans)
+        highlights:
+          - React front-endfeatures gebouwd in een klein productteam.
+
+  - company: Apostel
+    period: 2017 – 2020
+    roles:
+      - title: Bartender
+        highlights:
+          - Snel, klantgericht werk naast mijn studie.
+
+education:
+  - school: Avans Hogeschool
+    programme: HBO-ICT
+    period: 2016 – 2020
+    note: Propedeuse en stage afgerond; gestopt om fulltime bij GoodHabitz te beginnen.
+
+skills:
+  testing: [Playwright, end-to-end testen, visuele regressie, testarchitectuur, flake-analyse, AIO Tests]
+  languages: [TypeScript, JavaScript]
+  ci_and_ops: [GitLab CI, Grafana, Loki, SonarCloud, Trivy, OpenTofu, Netlify]
+  ai: [Claude Code, MCP-agents, Playwright MCP]
+  web: [React, Vue, Nuxt, Node.js, Tailwind]
+
+spoken_languages:
+  - Nederlands (moedertaal)
+  - Engels (vloeiend)
+  - Duits (goed)
+
+projects:
+  - name: limburggymnastics.nl
+    description: >
+      Productiewebsite voor een regionale gymnastiekstichting, gebouwd op basis
+      van de ontwerpen van een designer met Nuxt, Tailwind en Decap CMS. Het
+      domein gemigreerd vanaf een WordPress-host zonder e-mailonderbreking, en
+      zo overgedragen dat de club zelf de content beheert.
